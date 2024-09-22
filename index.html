@@ -1,9 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Donate Bangladesh</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/coin.png" />
+
+    <!-- tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lexand font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .lexend {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
   </head>
-  <body></body>
+  <body class="lexend">
+    <!-- navbar -->
+    <nav class="bg-yellow-100 px-10 py-3">
+      <div
+        class="navbar container mx-auto flex-col lg:flex-row space-y-4 justify-between items-center"
+      >
+        <div>
+          <button class="btn font-bold bg-green-500 px-6 hover:bg-green-400">
+            Blog
+          </button>
+        </div>
+        <div>
+          <a class="btn btn-ghost text-xl hover:bg-transparent"
+            ><img src="./assets/logo.png" /> Donate Bangladesh</a
+          >
+        </div>
+        <div>
+          <div class="flex flex-row">
+            <img src="./assets/coin.png" />&nbsp;
+            <span id="donation">5500</span> &nbsp;BDT
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
 </html>
