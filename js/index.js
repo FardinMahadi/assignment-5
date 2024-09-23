@@ -43,11 +43,46 @@ document.getElementById("history-btn").addEventListener("click", function () {
   donationBtn.classList.add("btn-outline");
 });
 
+// donation count
+// resent flood
+document
+  .getElementById("noakhali-flood-btn")
+  .addEventListener("click", function () {
+    if (parseFloat(document.getElementById("noakhali-flood-input").value) > 0) {
+      const donationAmount = parseFloat(
+        document.getElementById("noakhali-flood-input").value
+      );
+      let historyDonationAmount = parseFloat(
+        document.getElementById("noakhali-flood-amount").innerText
+      );
+      let balance = parseFloat(document.getElementById("balance").innerText);
+
+      if (balance >= donationAmount) {
+        historyDonationAmount += donationAmount;
+        balance -= donationAmount;
+
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("noakhali-flood-amount").innerText =
+          historyDonationAmount;
+
+        document.getElementById("noakhali-flood-input").value = "";
+
+        addHistory(donationAmount, "Flood at Noakhali, Bangladesh");
+      } else {
+        alert("You don't have enough money");
+        document.getElementById("noakhali-flood-input").value = "";
+      }
+    } else {
+      alert("Enter a valid amount");
+      document.getElementById("noakhali-flood-input").value = "";
+    }
+  });
+
 // history section
-function addHistory(amount, event, location) {
+function addHistory(amount, title) {
   const historyBox = document.getElementById("history-box");
   historyBox.innerHTML += ` <div class=" border-2 p-3 rounded-md my-5">
-              <h1>${amount} Taka is Donated for ${event} at ${location}</h1>
+              <h1>${amount} Taka is Donated for ${title} </h1>
               <p class="text-sm text-green-600">Date : ${getCurrentFormattedDate()} </p>
             </div>`;
 }
