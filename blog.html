@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog's Donate Bangladesh</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/coin.png" />
+
+    <!-- tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lexand font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .lexend {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="lexend">
+    <!-- navbar -->
+    <nav class="bg-yellow-100 px-10 py-3">
+      <div
+        class="navbar container mx-auto flex-col sm:flex-row space-y-4 justify-between items-center"
+      >
+        <div>
+          <button
+            id="blog"
+            class="btn font-bold bg-green-500 px-6 hover:bg-green-400"
+          >
+            Blog
+          </button>
+        </div>
+        <div>
+          <a class="btn btn-ghost text-xl hover:bg-transparent"
+            ><img src="./assets/logo.png" /> Donate Bangladesh</a
+          >
+        </div>
+        <div>
+          <div class="flex flex-row text-gray-600 text-xl">
+            <img src="./assets/coin.png" />&nbsp;
+            <span id="balance">5500</span> &nbsp;BDT
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container px-10">
+      <!-- FAQ section -->
+      <h1 class="text-5xl my-10">Want to know?</h1>
+      <!-- main body -->
+      <div class="join join-vertical w-full">
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-xl font-medium">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p>
+              The Document Object Model (DOM) is a programming interface for web
+              pages. It represents the structure of an HTML or XML document as a
+              tree of objects (nodes), where each element or content is a node.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>To select an element from the DOM in JavaScript, you can use several methods. One common method is "document.getElementById()" which selects an element by its unique ID. Another option is "document.getElementsByClassName()" which selects elements based on their class name. This returns multiple elements, as classes can be shared by different elements. You can also use "document.getElementsByTagName()" to select elements by their tag name, such as "<div>" or "<p>". Additionally, "document.querySelector()" can be used to select the first element that matches a specific CSS selector, while "document.querySelectorAll()" selects all matching elements. These methods allow you to access and manipulate elements on a webpage dynamically.</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            What is event delegation in the context of the DOM, and why is it useful?  
+          </div>
+          <div class="collapse-content">
+            <p>Event delegation is a technique in the DOM where a single event listener is attached to a parent element to manage events triggered by its child elements. Instead of adding individual event listeners to multiple child elements, the parent listens for events that "bubble up" from the children. This works because most events in the DOM bubble up from the target element to its parents.
+            </p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-base-300 border">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">
+            How do you manipulate an element's attributes and styles using the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>To manipulate an element's attributes and styles in the DOM, you can use JavaScript. For attributes, you can use setAttribute() to add or modify an attribute, getAttribute() to retrieve its value, and removeAttribute() to remove it. For styles, you can directly modify the element's style property by setting specific CSS properties, such as backgroundColor or fontSize. This allows you to dynamically adjust the appearance of elements or change attributes like href or src, providing flexibility in how elements behave or look on the webpage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/blog.js"></script>
+  </body>
+</html>

@@ -43,28 +43,42 @@
     </style>
   </head>
   <body class="lexend">
-    <!-- navbar -->
-    <nav class="bg-yellow-100 px-10 py-3">
-      <div
-        class="navbar container mx-auto flex-col lg:flex-row space-y-4 justify-between items-center"
-      >
-        <div>
-          <button class="btn font-bold bg-green-500 px-6 hover:bg-green-400">
-            Blog
-          </button>
-        </div>
-        <div>
-          <a class="btn btn-ghost text-xl hover:bg-transparent"
-            ><img src="./assets/logo.png" /> Donate Bangladesh</a
-          >
-        </div>
-        <div>
-          <div class="flex flex-row">
-            <img src="./assets/coin.png" />&nbsp;
-            <span id="donation">5500</span> &nbsp;BDT
+    <header class="fixed w-full flex flex-col border-b-2">
+      <!-- navbar -->
+      <nav class="bg-yellow-100 px-10 py-3">
+        <div
+          class="navbar container mx-auto flex-col sm:flex-row space-y-4 justify-between items-center"
+        >
+          <div>
+            <button
+              id="blog"
+              class="btn font-bold bg-green-500 px-6 hover:bg-green-400"
+            >
+              Blog
+            </button>
+          </div>
+          <div>
+            <a class="btn btn-ghost text-xl hover:bg-transparent"
+              ><img src="./assets/logo.png" /> Donate Bangladesh</a
+            >
+          </div>
+          <div>
+            <div class="flex flex-row text-gray-600 text-xl">
+              <img src="./assets/coin.png" />&nbsp;
+              <span id="balance">5500</span> &nbsp;BDT
+            </div>
           </div>
         </div>
+      </nav>
+      <!-- buttons section -->
+      <div class="py-3 mx-auto items-center justify-center space-x-5">
+        <button class="btn font-bold px-6 bg-lime-300 hover:bg-lime-400">
+          Donation
+        </button>
+        <button class="btn font-bold px-6 btn-outline">History</button>
       </div>
-    </nav>
+    </header>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>
