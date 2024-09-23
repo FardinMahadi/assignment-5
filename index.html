@@ -1,84 +1,147 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donate Bangladesh</title>
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/coin.png" />
 
-    <!-- tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-            },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate Bangladesh</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="./assets/coin.png" />
+  <!-- tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
+  <!-- daisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lexand font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <style>
+    .lexend {
+      font-family: "Lexend", sans-serif;
+    }
+  </style>
+</head>
 
-    <!-- daisyUI -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lexand font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      .lexend {
-        font-family: "Lexend", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="lexend">
-    <header class="fixed w-full flex flex-col border-b-2">
-      <!-- navbar -->
-      <nav class="bg-yellow-100 px-10 py-3">
-        <div
-          class="navbar container mx-auto flex-col sm:flex-row space-y-4 justify-between items-center"
-        >
-          <div>
-            <button
-              id="blog"
-              class="btn font-bold bg-green-500 px-6 hover:bg-green-400"
-            >
-              Blog
-            </button>
-          </div>
-          <div>
-            <a class="btn btn-ghost text-xl hover:bg-transparent"
-              ><img src="./assets/logo.png" /> Donate Bangladesh</a
-            >
-          </div>
-          <div>
-            <div class="flex flex-row text-gray-600 text-xl">
-              <img src="./assets/coin.png" />&nbsp;
-              <span id="balance">5500</span> &nbsp;BDT
-            </div>
+<body class="lexend">
+  <header class="fixed top-0 w-full flex flex-col border-b-2 bg-white">
+    <!-- navbar -->
+    <nav class="bg-yellow-100 px-10 py-3">
+      <div class="navbar container mx-auto flex-col sm:flex-row space-y-4 justify-between items-center">
+        <div>
+          <button id="blog" class="btn font-bold bg-green-500 px-6 hover:bg-green-400">
+            Blog
+          </button>
+        </div>
+        <div>
+          <a class="btn btn-ghost text-xl hover:bg-transparent"><img src="./assets/logo.png" /> Donate Bangladesh</a>
+        </div>
+        <div>
+          <div class="flex flex-row text-gray-600 text-xl">
+            <img src="./assets/coin.png" />&nbsp;
+            <span id="balance">5500</span> &nbsp;BDT
           </div>
         </div>
-      </nav>
-      <!-- buttons section -->
-      <div class="py-3 mx-auto items-center justify-center space-x-5">
-        <button class="btn font-bold px-6 bg-lime-300 hover:bg-lime-400">
-          Donation
-        </button>
-        <button class="btn font-bold px-6 btn-outline">History</button>
       </div>
-    </header>
+    </nav>
+    <!-- buttons section -->
+    <div class="py-3 mx-auto items-center justify-center space-x-5">
+      <button id="donation-box" class="btn font-bold px-6 bg-lime-300 hover:bg-lime-400">
+        Donation
+      </button>
+      <button id="history-btn" class="btn font-bold px-6 btn-outline">History</button>
+    </div>
+  </header>
+  <main class="container w-11/12 mx-auto my-10 mt-80 sm:mt-52">
+    <!-- donation section -->
+    <div id="donation-section-box">
+      <!-- cards -->
+      <!-- card 1 -->
+      <div class="border-2 rounded-md p-5 shadow-xl mb-5 flex flex-col md:flex-row gap-5">
+        <img src="./assets/noakhali.png" alt="" />
+        <div class="flex flex-col gap-2">
+          <h1 class="bg-gray-200 rounded-md p-2 w-fit flex items-center justify-between">
+            <img src="./assets/coin.png" alt="" /> &nbsp; 0 BDT
+          </h1>
+          <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+          <p class="text-sm text-gray-600"></p>
+          The recent floods in Noakhali have caused significant damage to
+          homes infrastructure. Your donation will help provide essential
+          supplies and to those affected by this disaster. Every contribution,
+          big or small, makes difference. Please join us in supporting the
+          relief efforts and making a positive impact on the lives of those in
+          need.
+          </p>
+          <input type="number" id="" placeholder="Write Donation Amount" class="border-2 w-full p-3 rounded-lg" />
+          <button class="donate btn font-bold px-6 bg-lime-300 hover:bg-lime-400 w-full">
+            Donation
+          </button>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="border-2 rounded-md p-5 shadow-xl mb-5 flex flex-col md:flex-row gap-5">
+        <img src="./assets/feni.png" alt="" />
+        <div class="flex flex-col gap-2">
+          <h1 class="bg-gray-200 rounded-md p-2 w-fit flex items-center justify-between">
+            <img src="./assets/coin.png" alt="" /> &nbsp; 600 BDT
+          </h1>
+          <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
+          <p class="text-sm text-gray-600"></p>
+          The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your
+          generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those
+          affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of
+          this disaster. Every contribution counts towards making a real difference. Please consider donating today to
+          assist those in urgent need.
+          </p>
+          <input type="number" id="" placeholder="Write Donation Amount" class="border-2 w-full p-3 rounded-lg" />
+          <button class=" donate btn font-bold px-6 bg-lime-300 hover:bg-lime-400 w-full">
+            Donation
+          </button>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div class="border-2 rounded-md p-5 shadow-xl mb-5 flex flex-col md:flex-row gap-5">
+        <img src="./assets/quota-protest.png" alt="" />
+        <div class="flex flex-col gap-2">
+          <h1 class="bg-gray-200 rounded-md p-2 w-fit flex items-center justify-between">
+            <img src="./assets/coin.png" alt="" /> &nbsp; 2400 BDT
+          </h1>
+          <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
+          <p class="text-sm text-gray-600"></p>
+          The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals.
+          Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those
+          affected. By contributing, you help ensure that injured individuals receive the care and support they need
+          during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in
+          their recovery. Please consider making a donation to support these brave individuals in their time of need.
+          </p>
+          <input type="number" id="" placeholder="Write Donation Amount" class="border-2 w-full p-3 rounded-lg" />
+          <button class="donate btn font-bold px-6 bg-lime-300 hover:bg-lime-400 w-full">
+            Donation
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- history section -->
+    <div id="history-box">
+      <div class=" border-2 p-3 rounded-md my-5">
+        <h1>96500 Taka is Donated for famine-2024 at Feni, Bangladesh</h1>
+        <p class="text-sm text-green-600">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
+      </div>
+    </div>
+  </main>
+  <footer class="h-20 w-full bg-yellow-100"></footer>
+  <script src="./js/index.js"></script>
+</body>
 
-    <script src="./js/index.js"></script>
-  </body>
 </html>
