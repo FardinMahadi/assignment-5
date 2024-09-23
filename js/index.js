@@ -44,7 +44,7 @@ document.getElementById("history-btn").addEventListener("click", function () {
 });
 
 // donation count
-// resent flood
+// noakhali flood
 document
   .getElementById("noakhali-flood-btn")
   .addEventListener("click", function () {
@@ -64,6 +64,7 @@ document
         document.getElementById("balance").innerText = balance;
         document.getElementById("noakhali-flood-amount").innerText =
           historyDonationAmount;
+        openModal();
 
         document.getElementById("noakhali-flood-input").value = "";
 
@@ -75,6 +76,78 @@ document
     } else {
       alert("Enter a valid amount");
       document.getElementById("noakhali-flood-input").value = "";
+    }
+  });
+
+// feni flood
+document
+  .getElementById("feni-flood-btn")
+  .addEventListener("click", function () {
+    if (parseFloat(document.getElementById("feni-flood-input").value) > 0) {
+      const donationAmount = parseFloat(
+        document.getElementById("feni-flood-input").value
+      );
+      let historyDonationAmount = parseFloat(
+        document.getElementById("feni-flood-amount").innerText
+      );
+      let balance = parseFloat(document.getElementById("balance").innerText);
+
+      if (balance >= donationAmount) {
+        historyDonationAmount += donationAmount;
+        balance -= donationAmount;
+
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("feni-flood-amount").innerText =
+          historyDonationAmount;
+
+        document.getElementById("feni-flood-input").value = "";
+        openModal();
+
+        addHistory(donationAmount, "Flood at Feni, Bangladesh");
+      } else {
+        alert("You don't have enough money");
+        document.getElementById("feni-flood-input").value = "";
+      }
+    } else {
+      alert("Enter a valid amount");
+      document.getElementById("feni-flood-input").value = "";
+    }
+  });
+
+//   for students
+document
+  .getElementById("donate-for-injured-btn")
+  .addEventListener("click", function () {
+    if (
+      parseFloat(document.getElementById("donate-for-injured-input").value) > 0
+    ) {
+      const donationAmount = parseFloat(
+        document.getElementById("donate-for-injured-input").value
+      );
+      let historyDonationAmount = parseFloat(
+        document.getElementById("donate-for-injured-amount").innerText
+      );
+      let balance = parseFloat(document.getElementById("balance").innerText);
+
+      if (balance >= donationAmount) {
+        historyDonationAmount += donationAmount;
+        balance -= donationAmount;
+
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("donate-for-injured-amount").innerText =
+          historyDonationAmount;
+
+        document.getElementById("donate-for-injured-input").value = "";
+        openModal();
+
+        addHistory(donationAmount, "Aid for Injured in the Quota Movement");
+      } else {
+        alert("You don't have enough money");
+        document.getElementById("donate-for-injured-input").value = "";
+      }
+    } else {
+      alert("Enter a valid amount");
+      document.getElementById("donate-for-injured-input").value = "";
     }
   });
 
@@ -104,5 +177,4 @@ function openModal() {
 // function to clove modal
 function closeModal() {
   document.getElementById("modal-box").classList.add("hidden");
-  console.log("clicked");
 }
